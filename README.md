@@ -1,13 +1,16 @@
-# All Alone, a serverless outbound email server(message submission agent (MSA)) [WIP]
+# All Alone
 
-[All Alone](<https://en.wikipedia.org/wiki/All_Alone_(pigeon)>) **(NURP.39.SDS.39) was a war pigeon who was decorated for bravery in service during the Second World War for delivering an important secret message in one day over a distance of 400 miles (640 km), while serving with the National Pigeon Service in August, 1943.**
+## An outbound email server (message submission agent) [WIP]
+
+[All Alone](<https://en.wikipedia.org/wiki/All_Alone_(pigeon)>) **was a war pigeon who delivered an important secret message in one day over a distance of 640 km during the WW2**
 
 ## Challenges
 
 SMTP server are 'stateful', its advisable serverless functions(lambda, GCP Functions) to be stateless
 
 ```
-Keeping functions stateless enables AWS Lambda to rapidly launch as many copies of the function as needed to scale to the rate of incoming events. While AWS Lambda’s programming model is stateless, your code can access stateful data by calling other web services, such as Amazon S3 or Amazon DynamoDB.
+Keeping functions stateless enables AWS Lambda to rapidly launch as many copies of the function as needed to scale to the rate of incoming events.
+While AWS Lambda’s programming model is stateless, your code can access stateful data by calling other web services, such as Amazon S3 or Amazon DynamoDB.
 ```
 
 ## API
@@ -15,8 +18,8 @@ Keeping functions stateless enables AWS Lambda to rapidly launch as many copies 
 Attempt to send 1,000,000 Emails free of charge using lambda.
 
 ```ts
-import allalone from "allalone/lambda";
-export.default = allalone("<config object>") // Returns an aws lambda handler function
+import all_alone from "all-alone/lambda";
+export.default = all_alone("<config object>") // Returns an aws lambda handler function
 ```
 
 Rest API

@@ -8,24 +8,18 @@
     "type": "git",
     "url": "git://github.com/mainanick/allalone.git"
   },
-  "main": "dist/allalone.js",
   "engines": {
     "node": ">= v10.17.0"
   },
-  "bin": {
-    "haraka": "./bin/allalone"
-  },
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/allalone.js",
-    "test": "jest",
+    "build": "yarn workspace all-alone run build",
+    "start": "yarn workspace all-alone run start",
+    "test": "yarn workspace all-alone run test",
     "lint": "prettier --write packages/**/*.{ts,tsx,js,jsx}"
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^25.1.4",
     "husky": "^4.2.3",
-    "jest": "^25.1.0",
     "prettier": "^1.19.1",
     "ts-jest": "^25.2.1",
     "ts-node": "^8.6.2",

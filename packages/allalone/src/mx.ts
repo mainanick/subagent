@@ -27,7 +27,7 @@ export function lookup(hostname: string) {
   return new Promise<dns.MxRecord[]>((resolve, reject) =>
     dns.resolveMx(hostname, (err, records: dns.MxRecord[]) => {
       if (err) {
-        if (err.code === "ENODATA" || err.code === "ENOTFOUND") {
+        if (err.code === dns.NODATA || err.code === dns.NOTFOUND) {
           return reject(err);
         }
       }

@@ -1,5 +1,3 @@
-import { Address } from "address-rfc2822";
-
 export const SizeRegex = /^SIZE\s+(\d+)$/;
 export const AuthRegex = /^AUTH\s+(.+)$/;
 export enum AUTH_ASKING {
@@ -51,23 +49,4 @@ export enum MAIL_SEND_RESPONSE_STATUS {
   OK = "OK",
   FAIL = "FAIL",
   BOUNCE = "BOUNCE"
-}
-export function send_mail(from: string, to: string) {
-  console.log(from, to);
-}
-export function send(
-  from: string | Address,
-  to: string[] | Address[],
-  content: string
-) {
-  try {
-    const mail_from = from instanceof Address ? from : new Address(from);
-    const rcpts = [...to];
-    while (rcpts.length) {
-      send_mail(from, rcpts.pop());
-    }
-    return [mail_from, to];
-  } catch (e) {
-    console.error(e);
-  }
 }

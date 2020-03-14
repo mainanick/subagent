@@ -14,6 +14,7 @@
   "scripts": {
     "build": "yarn workspace all-alone run build",
     "start": "yarn workspace all-alone run start",
+    "dev:http": "yarn workspace @all-alone/http run dev",
     "test": "yarn workspace all-alone run test",
     "lint": "prettier --write packages/**/*.{ts,tsx,js,jsx}"
   },

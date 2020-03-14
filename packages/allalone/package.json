@@ -16,8 +16,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/all_alone.js",
-    "test": "jest",
-    "lint": "prettier --write src/**/*.{ts,tsx,js,jsx}"
+    "test": "jest"
   },
   "dependencies": {
     "address-rfc2821": "^1.1.3",

@@ -1,6 +1,8 @@
 # All Alone
 
-## An outbound email server (message submission agent) [WIP]
+## An outbound email server (message submission agent)
+
+## [WIP] Exploring dev ux friendly API first
 
 [All Alone](<https://en.wikipedia.org/wiki/All_Alone_(pigeon)>) **was a war pigeon who delivered an important secret message in one day over a distance of 640 km during the WW2**
 

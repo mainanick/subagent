@@ -1,4 +1,4 @@
-import AllAlone from "all-alone";
+import Subagent from "subagent";
 
 import express from "express";
 import http from "http";
@@ -6,10 +6,10 @@ import http from "http";
 const app = express();
 const port = 3000;
 
-const all_alone = new AllAlone();
-all_alone.on("bounce", envelope => {
-  //Probably call webhook process.env.ALL_ALONE_BOUNCE
-  const onBounceURL = process.env.ALL_ALONE_BOUNCE_HOOK || process.env.ALL_ALONE_HOOK;
+const subagent = new Subagent();
+subagent.on("bounce", envelope => {
+  //Probably call webhook
+  const onBounceURL = process.env.BOUNCE_HOOK || process.env.HOOK;
   if (onBounceURL) {
     fetch(onBounceURL, {
       method: "POST",
@@ -20,8 +20,8 @@ all_alone.on("bounce", envelope => {
     });
   }
 });
-all_alone.on("sent", envelope => {
-  const onBounceURL = process.env.ALL_ALONE_BOUNCE_HOOK || process.env.ALL_ALONE_HOOK;
+subagent.on("sent", envelope => {
+  const onBounceURL = process.env.SENT_HOOK || process.env.HOOK;
   if (onBounceURL) {
     fetch(onBounceURL, {
       method: "POST",
@@ -35,7 +35,7 @@ all_alone.on("sent", envelope => {
 
 app.get("/", (req, res) => {
   const { from, to, subject, text } = req.query;
-  const mail = all_alone.send_mail(from, to, subject, text);
+  const mail = subagent.send_mail(from, to, subject, text);
   res.status(200).json({ status: "OK", to, from, text });
 });
 

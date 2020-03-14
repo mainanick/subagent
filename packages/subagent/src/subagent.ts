@@ -7,7 +7,7 @@ const pkgJsonPath = path.join(__dirname, "../", "./package.json");
 
 export const version = JSON.parse(fs.readFileSync(pkgJsonPath, "utf8")).version;
 
-class AllAlone extends EventEmitter {
+class Subagent extends EventEmitter {
   constructor() {
     super();
   }
@@ -18,4 +18,4 @@ class AllAlone extends EventEmitter {
   }
 }
 
-export default AllAlone;
+export default Subagent;

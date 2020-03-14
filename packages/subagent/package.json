@@ -1,21 +1,18 @@
 {
-  "name": "all-alone",
+  "name": "subagent",
   "version": "0.0.1",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/mainanick/allalone.git"
+    "url": "git://github.com/mainanick/subagent.git"
   },
-  "main": "dist/all_alone.js",
+  "main": "dist/subagent.js",
   "engines": {
     "node": ">= v10.17.0"
   },
-  "bin": {
-    "allalone": "./bin/all_alone"
-  },
   "scripts": {
     "build": "tsc",
-    "start": "node dist/all_alone.js",
+    "start": "node dist/subagent.js",
     "test": "jest"
   },
   "dependencies": {

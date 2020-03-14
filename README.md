@@ -1,10 +1,8 @@
-# All Alone
+# subagent
 
 ## An outbound email server (message submission agent)
 
 ## [WIP] Exploring dev ux friendly API first
-
-[All Alone](<https://en.wikipedia.org/wiki/All_Alone_(pigeon)>) **was a war pigeon who delivered an important secret message in one day over a distance of 640 km during the WW2**
 
 ## Challenges
 
@@ -20,8 +18,8 @@ While AWS Lambda’s programming model is stateless, your code can access statef
 Attempt to send 1,000,000 Emails free of charge using lambda.
 
 ```ts
-import all_alone from "all-alone/lambda";
-export.default = all_alone("<config object>") // Returns an aws lambda handler function
+import subagent from "subagent/lambda";
+export.default = subagent("<config object>") // Returns an aws lambda handler function
 ```
 
 Rest API
@@ -32,7 +30,7 @@ curl -s --user 'api:YOUR_API_KEY' \
     -F from='Excited User <user@YOUR_DOMAIN_NAME>' \
     -F to=bar@example.com \
     -F subject='Hello' \
-    -F text='All Alone!'
+    -F text='subagent!'
 ```
 
 SMTP

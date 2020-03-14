@@ -12,9 +12,12 @@
     "node": ">= v10.17.0"
   },
   "scripts": {
-    "build": "yarn workspace subagent run build",
-    "start": "yarn workspace subagent run start",
-    "dev:http": "yarn workspace @subagent/http run dev",
+    "build:agent": "yarn workspace subagent run build",
+    "dev:smtp": "yarn workspace subagent-smtp run dev",
+    "build:smtp": "yarn workspace subagent-smtp run build",
+    "dev:http": "yarn workspace subagent-http run dev",
+    "build:http": "yarn workspace subagent-http run build",
+    "build": "yarn run build:agent && yarn run build:smtp && yarn run build:http",
     "test": "yarn workspace subagent run test",
     "lint": "prettier --write packages/**/*.{ts,tsx,js,jsx}"
   },

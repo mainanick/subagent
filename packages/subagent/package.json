@@ -1,17 +1,20 @@
 {
   "name": "subagent",
   "version": "0.0.1",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git://github.com/mainanick/subagent.git"
   },
   "main": "dist/subagent.js",
+  "files": [
+    "README.md",
+    "dist/"
+  ],
   "engines": {
     "node": ">= v10.17.0"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf dist/ && tsc",
     "start": "node dist/subagent.js",
     "test": "jest"
   },
@@ -25,6 +28,7 @@
   "devDependencies": {
     "@types/jest": "^25.1.4",
     "jest": "^25.1.0",
+    "rimraf": "^3.0.2",
     "ts-jest": "^25.2.1"
   }
 }

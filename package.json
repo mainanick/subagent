@@ -1,0 +1,42 @@
+{
+  "name": "allalone",
+  "version": "0.0.1",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mainanick/allalone.git"
+  },
+  "main": "dist/allalone.js",
+  "engines": {
+    "node": ">= v10.17.0"
+  },
+  "bin": {
+    "haraka": "./bin/allalone"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/allalone.js",
+    "test": "jest",
+    "lint": "prettier --write src/**/*.{ts,tsx,js,jsx}"
+  },
+  "dependencies": {
+    "address-rfc2821": "^1.1.3",
+    "address-rfc2822": "^2.0.4",
+    "email-addresses": "^3.1.0",
+    "sockaddr": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}

@@ -1,9 +1,7 @@
 {
+  "name": "allalone",
   "version": "0.0.1",
   "private": true,
-  "workspaces": [
-    "packages/**/*"
-  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/mainanick/allalone.git"
@@ -19,9 +17,15 @@
     "build": "tsc",
     "start": "node dist/allalone.js",
     "test": "jest",
-    "lint": "prettier --write packages/**/*.{ts,tsx,js,jsx}"
+    "lint": "prettier --write src/**/*.{ts,tsx,js,jsx}"
   },
-  "dependencies": {},
+  "dependencies": {
+    "address-rfc2821": "^1.1.3",
+    "address-rfc2822": "^2.0.4",
+    "debug": "^4.1.1",
+    "email-addresses": "^3.1.0",
+    "sockaddr": "^1.0.1"
+  },
   "devDependencies": {
     "@types/jest": "^25.1.4",
     "husky": "^4.2.3",
